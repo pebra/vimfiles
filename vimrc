@@ -36,6 +36,12 @@ set shiftwidth=2
 set softtabstop=2
 set number
 
+set t_Co=256
+set background=dark
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+
+colorscheme toychest
 
 set autoread
 
@@ -53,4 +59,3 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-colorscheme toychest
