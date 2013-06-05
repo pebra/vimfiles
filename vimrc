@@ -35,6 +35,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set number
+set laststatus=2
+set statusline=%f "tail of the filename
 
 set t_Co=256
 set background=dark
