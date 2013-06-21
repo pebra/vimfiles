@@ -35,9 +35,11 @@ set shiftround
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set number
+set relativenumber
 set laststatus=2
 set statusline=%f "tail of the filename
+
+set hidden
 
 set t_Co=256
 set background=dark
@@ -54,6 +56,17 @@ set history=200
 
 set encoding=utf-8
 
+" ----------------------------------------------------------------------------
+"  "  moving around, searching and patterns
+"  "
+"  ----------------------------------------------------------------------------
+set nostartofline   " keep cursor in same column for long-range motion cmds
+set incsearch  " Highlight pattern matches as you type
+set ignorecase" ignore case when using a search pattern
+set smartcase  " override 'ignorecase' when pattern
+                      " has upper case character
+
+
 
 if &term =~ '256color'
   " Disable Background Color Erase (BCE) so that color schemes
@@ -62,3 +75,26 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+
+
+"statusline stuff
+set statusline=
+set statusline+=b%-1.3n\ >                    " buffer number
+set statusline+=\ %{fugitive#statusline()}:
+set statusline+=\ %F
+set statusline+=\ %M
+set statusline+=%R
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%=
+set statusline+=\ %Y
+set statusline+=\ <\ %{&fenc}
+set statusline+=\ <\ %{&ff}
+set statusline+=\ <\ %p%%
+set statusline+=\ %l:
+set statusline+=%02.3c		" cursor line/total lines
+
+set helpheight=30         " Set window height when opening Vim help windows
+
+set ttyfast
