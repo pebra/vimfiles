@@ -20,6 +20,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'tomasr/molokai'
 Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-fugitive.git'
 
 
 

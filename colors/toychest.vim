@@ -38,7 +38,7 @@ hi StorageClass guifg=#e4bc38 guibg=NONE guisp=NONE gui=NONE ctermfg=179 ctermbg
 "hi Special -- no settings --
 "hi LineNr -- no settings --
 "hi StatusLine -- no settings --
-hi Normal guifg=#34d58e guibg=#2f475d guisp=#2f475d gui=NONE ctermfg=79 ctermbg=23 cterm=NONE
+hi Normal guifg=#34d58e guibg=#2f475d guisp=#2f475d gui=NONE ctermfg=79 ctermbg=NONE cterm=NONE
 "hi Label -- no settings --
 hi CTagsImport guifg=#e75c3d guibg=NONE guisp=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
 hi PMenuSel guifg=#88dd88 guibg=#949698 guisp=#949698 gui=NONE ctermfg=114 ctermbg=246 cterm=NONE
