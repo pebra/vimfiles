@@ -1,7 +1,7 @@
 set nocompatible
-filetype off
 
 syntax on
+filetype off
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
@@ -11,8 +11,8 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'vim-ruby/vim-ruby.git'
-Bundle "tpope/vim-rake"
-Bundle "kchmck/vim-coffee-script"
+Bundle 'tpope/vim-rake'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
@@ -23,6 +23,7 @@ Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'rking/ag.vim'
+Bundle 'mintplant/vim-literate-coffeescript'
 
 
 
@@ -37,10 +38,11 @@ set shiftround
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set expandtab
 set relativenumber
 set laststatus=2
 set statusline=%f "tail of the filename
-
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
 
 set t_Co=256
