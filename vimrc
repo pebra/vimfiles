@@ -24,6 +24,9 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'rking/ag.vim'
 Bundle 'mintplant/vim-literate-coffeescript'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mivok/vimtodo'
+"Bundle 'Valloric/YouCompleteMe'
 
 
 
@@ -32,6 +35,16 @@ filetype plugin indent on
 if has('syntax') && !exists('g:syntax_on')
   syntax enable			" Turn on syntax highlighting
 endif
+
+"Disable arrow keys
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
 set smarttab              
 set shiftround            
