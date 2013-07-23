@@ -63,7 +63,7 @@ set background=dark
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
-colorscheme toychest
+colorscheme seoul256
 
 set autoread
 
