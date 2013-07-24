@@ -57,6 +57,7 @@ set laststatus=2
 set statusline=%f "tail of the filename
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
+set scrolloff=3
 
 set t_Co=256
 set background=dark
