@@ -1,4 +1,5 @@
 set nocompatible
+set encoding=utf-8
 
 syntax on
 filetype off
@@ -25,9 +26,13 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'rking/ag.vim'
 Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mivok/vimtodo'
+"Bundle 'mivok/vimtodo'
+Bundle 'mattn/zencoding-vim'
+Bundle 'tpope/vim-endwise'
+Bundle 'pangloss/vim-javascript'
 "Bundle 'Valloric/YouCompleteMe'
-
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'AndrewRadev/splitjoin.vim'
 
 
 filetype plugin indent on
@@ -49,6 +54,7 @@ noremap   <Right>  <NOP>
 set smarttab              
 set shiftround            
 set tabstop=2
+set backspace=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
@@ -57,13 +63,15 @@ set laststatus=2
 set statusline=%f "tail of the filename
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
+"clean vertical split bar
+set fillchars+=vert:\  
 
 set t_Co=256
 set background=dark
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
-colorscheme toychest
+colorscheme github
 
 set autoread
 
@@ -71,7 +79,6 @@ set autoread
 set history=200
 
 
-set encoding=utf-8
 
 " ----------------------------------------------------------------------------
 "  "  moving around, searching and patterns
