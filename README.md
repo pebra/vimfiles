@@ -1,7 +1,7 @@
 ## vimfiles ##
 
 ### Installation ###
-		git clone git@github.com:pebra/vimfiles.git ~/.vim
+		git clone https://github.com/pebra/vimfiles.git ~/.vim
 
 		mkdir -p ~/.vim/bundle
 
