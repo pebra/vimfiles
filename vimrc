@@ -11,6 +11,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/syntastic.git'
+Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'tpope/vim-rake'
 Bundle 'kchmck/vim-coffee-script'
@@ -33,7 +34,21 @@ Bundle 'pangloss/vim-javascript'
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'AndrewRadev/splitjoin.vim'
+"Bundle 'nono/vim-handlebars'
 
+Bundle 'derekwyatt/vim-scala'
+Bundle 'hsitz/VimOrganizer'
+
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-user'
+
+Bundle 'mustache/vim-mode'
+
+"Stefans awesome toolchain
+Bundle 'slim-template/vim-slim'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-repeat'
+Bundle 'godlygeek/tabular'
 
 filetype plugin indent on
 
@@ -51,6 +66,9 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+"Toggle shell with ctr+d
+noremap <C-d> :sh<cr>
+
 set smarttab              
 set shiftround            
 set tabstop=2
@@ -58,20 +76,30 @@ set backspace=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set ai
+set smartindent
 set relativenumber
 set laststatus=2
 set statusline=%f "tail of the filename
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
 "clean vertical split bar
-set fillchars+=vert:\  
+set fillchars+=vert:\  
+set showbreak=↪\ \
 
 set t_Co=256
 set background=dark
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
-colorscheme github
+"disable syntax checking for html
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': [],
+                     \ 'passive_filetypes': ['html'] }
+
+let g:mustache_abbreviations = 1
+
+colorscheme grb256
 
 set autoread
 
@@ -79,6 +107,8 @@ set autoread
 set history=200
 
 
+" Makes tabbing super awesome, yoloscheme
+set wildmode=list:longest,full
 
 " ----------------------------------------------------------------------------
 "  "  moving around, searching and patterns
@@ -86,7 +116,7 @@ set history=200
 "  ----------------------------------------------------------------------------
 set nostartofline   " keep cursor in same column for long-range motion cmds
 set incsearch  " Highlight pattern matches as you type
-set ignorecase" ignore case when using a search pattern
+set ignorecase " ignore case when using a search pattern
 set smartcase  " override 'ignorecase' when pattern
                       " has upper case character
 
