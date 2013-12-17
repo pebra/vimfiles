@@ -84,8 +84,9 @@ set statusline=%f "tail of the filename
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
 "clean vertical split bar
-set fillchars+=vert:\  
+set fillchars+=vert:\ "  
 set showbreak=↪\ \
+set scrolloff=3
 
 set t_Co=256
 set background=dark
