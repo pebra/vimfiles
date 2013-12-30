@@ -20,6 +20,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
 Bundle 'scrooloose/nerdtree' 
 Bundle 'junegunn/seoul256.vim'
+Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive.git'
@@ -49,6 +50,8 @@ Bundle 'slim-template/vim-slim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'godlygeek/tabular'
+Bundle 'bling/vim-airline'
+
 
 filetype plugin indent on
 
@@ -69,6 +72,25 @@ noremap   <Right>  <NOP>
 "Toggle shell with ctr+d
 noremap <C-d> :sh<cr>
 
+" statusline
+set laststatus=2
+set statusline=
+set statusline+=b%-1.3n\ >                    " buffer number
+set statusline+=\ %{fugitive#statusline()}:
+set statusline+=\ %F
+set statusline+=\ %M
+set statusline+=%R
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%=
+set statusline+=\ %Y
+set statusline+=\ <\ %{&fenc}
+set statusline+=\ <\ %{&ff}
+set statusline+=\ <\ %p%%
+set statusline+=\ %l:
+set statusline+=%02.3c           " cursor line/total lines
+
 set smarttab              
 set shiftround            
 set tabstop=2
@@ -79,8 +101,7 @@ set expandtab
 set ai
 set smartindent
 set relativenumber
-set laststatus=2
-set statusline=%f "tail of the filename
+" set statusline=%f "tail of the filename
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
 "clean vertical split bar
@@ -150,6 +171,16 @@ set statusline+=\ <\ %p%%
 set statusline+=\ %l:
 set statusline+=%02.3c		" cursor line/total lines
 
+" Powerline
+" let g:airline_powerline_fonts=1
+
 set helpheight=30         " Set window height when opening Vim help windows
 
 set ttyfast
+
+if &term =~ '256color'
+  " Disable Background Color Erase (BCE) so that color schemes
+  " work properly when Vim is used inside tmux and GNU screen.
+  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
