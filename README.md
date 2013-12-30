@@ -1,16 +1,21 @@
 ## vimfiles ##
 
 ### Installation ###
-		git clone https://github.com/pebra/vimfiles.git ~/.vim
 
-		mkdir -p ~/.vim/bundle
+```sh
+  git clone https://github.com/pebra/vimfiles.git ~/.vim
 
-		git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+  mkdir -p ~/.vim/bundle
 
-		ln -s ~/.vim/vimrc ~/.vimrc
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+  ln -s ~/.vim/vimrc ~/.vimrc
+```
 
 open up vim and then run
 
-		:BundleInstall
+```sh
+  :BundleInstall
+```
 
 now you're ready to go
