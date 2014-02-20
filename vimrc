@@ -32,6 +32,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'pangloss/vim-javascript'
+Bundle "othree/javascript-libraries-syntax.vim"
 "Bundle 'Valloric/YouCompleteMe'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -184,3 +185,7 @@ if &term =~ '256color'
   " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
   set t_ut=
 endif
+
+set hlsearch
+set incsearch
+filetype plugin indent on
