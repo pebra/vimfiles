@@ -18,7 +18,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
-Bundle 'scrooloose/nerdtree' 
+Bundle 'scrooloose/nerdtree'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
@@ -29,7 +29,7 @@ Bundle 'rking/ag.vim'
 Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'mivok/vimtodo'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'pangloss/vim-javascript'
 Bundle "othree/javascript-libraries-syntax.vim"
@@ -70,6 +70,7 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+map <leader>t :!mix test<CR>
 "Toggle shell with ctr+d
 noremap <C-d> :sh<cr>
 
@@ -92,8 +93,8 @@ set statusline+=\ <\ %p%%
 set statusline+=\ %l:
 set statusline+=%02.3c           " cursor line/total lines
 
-set smarttab              
-set shiftround            
+set smarttab
+set shiftround
 set tabstop=2
 set backspace=2
 set shiftwidth=2
@@ -106,7 +107,7 @@ set relativenumber
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
 "clean vertical split bar
-set fillchars+=vert:\ "  
+set fillchars+=vert:\ "
 set showbreak=↪\ \
 set scrolloff=3
 
