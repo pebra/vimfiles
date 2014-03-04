@@ -123,7 +123,7 @@ let g:syntastic_mode_map={ 'mode': 'active',
 
 let g:mustache_abbreviations = 1
 
-colorscheme grb256
+colorscheme toychest
 
 set autoread
 
@@ -174,7 +174,8 @@ set statusline+=\ %l:
 set statusline+=%02.3c		" cursor line/total lines
 
 " Powerline
-" let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 set helpheight=30         " Set window height when opening Vim help windows
 
