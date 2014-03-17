@@ -40,10 +40,8 @@ Bundle 'AndrewRadev/splitjoin.vim'
 
 Bundle 'derekwyatt/vim-scala'
 Bundle 'hsitz/VimOrganizer'
-
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
-
 Bundle 'mustache/vim-mode'
 
 "Stefans awesome toolchain
@@ -52,7 +50,6 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
-
 
 filetype plugin indent on
 
@@ -191,3 +188,8 @@ endif
 set hlsearch
 set incsearch
 filetype plugin indent on
+
+if has("gui_macvim")
+  set guifont=Sauce\ Code\ Powerline\ Light:h14
+  set linespace=2
+endif
