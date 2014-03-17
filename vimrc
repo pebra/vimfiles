@@ -50,6 +50,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
+Bundle "othree/javascript-libraries-syntax.vim"
 
 filetype plugin indent on
 
@@ -68,9 +69,12 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
 map <leader>t :!mix test<CR>
+map <leader>l :set list!<CR>
+set list
+set lcs=tab:▸\ ,nbsp:·,trail:·
+highlight SpecialKey guifg=#fff000
 "Toggle shell with ctr+d
 noremap <C-d> :sh<cr>
-
 " statusline
 set laststatus=2
 set statusline=
@@ -119,15 +123,12 @@ let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'passive_filetypes': ['html'] }
 
 let g:mustache_abbreviations = 1
+let g:used_javascript_libs = 'jquery,angularjs,angularui'
 
-colorscheme toychest
+colorscheme zenburn
 
 set autoread
-
-
 set history=200
-
-
 " Makes tabbing super awesome, yoloscheme
 set wildmode=list:longest,full
 
