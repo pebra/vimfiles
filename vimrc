@@ -11,7 +11,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/syntastic.git'
-Bundle 'tsaleh/vim-matchit'
+" Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'tpope/vim-rake'
 Bundle 'kchmck/vim-coffee-script'
@@ -28,18 +28,18 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'rking/ag.vim'
 Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'mivok/vimtodo'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'pangloss/vim-javascript'
 Bundle "othree/javascript-libraries-syntax.vim"
-"Bundle 'Valloric/YouCompleteMe'
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'AndrewRadev/splitjoin.vim'
 "Bundle 'nono/vim-handlebars'
+" Bundle 'hsitz/VimOrganizer'
+"Bundle 'mivok/vimtodo'
+"Bundle 'Valloric/YouCompleteMe'
 
 Bundle 'derekwyatt/vim-scala'
-Bundle 'hsitz/VimOrganizer'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'mustache/vim-mode'
@@ -51,6 +51,13 @@ Bundle 'tpope/vim-repeat'
 Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
 Bundle "othree/javascript-libraries-syntax.vim"
+
+" vhdl
+Bundle 'salinasv/vim-vhdl'
+
+"don't get scroogled
+" Bundle 'hsanson/vim-android'
+" Bundle 'bpowell/vim-android'
 
 filetype plugin indent on
 
@@ -103,7 +110,7 @@ set softtabstop=2
 set expandtab
 set ai
 set smartindent
-set relativenumber
+" set relativenumber
 " set statusline=%f "tail of the filename
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
@@ -124,8 +131,9 @@ let g:syntastic_mode_map={ 'mode': 'active',
 
 let g:mustache_abbreviations = 1
 let g:used_javascript_libs = 'jquery,angularjs,angularui'
+let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
-colorscheme zenburn
+colorscheme Tomorrow " seoul256
 
 set autoread
 set history=200
@@ -173,7 +181,7 @@ set statusline+=%02.3c		" cursor line/total lines
 
 " Powerline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 set helpheight=30         " Set window height when opening Vim help windows
 
@@ -189,6 +197,10 @@ endif
 set hlsearch
 set incsearch
 filetype plugin indent on
+
+hi! link FoldColumn Normal 
+set foldcolumn=12
+set nonumber
 
 if has("gui_macvim")
   set guifont=Sauce\ Code\ Powerline\ Light:h14
