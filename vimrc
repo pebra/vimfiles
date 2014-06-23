@@ -52,8 +52,18 @@ Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
 Bundle "othree/javascript-libraries-syntax.vim"
 
+
+Bundle 'cocopon/iceberg.vim'
+Bundle 'cocopon/svss.vim'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'ciaranm/inkpot'
+Bundle 'vim-scripts/summerfruit256.vim'
+
 " vhdl
 Bundle 'salinasv/vim-vhdl'
+
+" load project specific vimrc
+Bundle "embear/vim-localvimrc"
 
 "don't get scroogled
 " Bundle 'hsanson/vim-android'
@@ -110,7 +120,7 @@ set softtabstop=2
 set expandtab
 set ai
 set smartindent
-" set relativenumber
+set relativenumber
 " set statusline=%f "tail of the filename
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab " propper indentation for coffee
 set hidden
@@ -133,7 +143,8 @@ let g:mustache_abbreviations = 1
 let g:used_javascript_libs = 'jquery,angularjs,angularui'
 let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
-colorscheme Tomorrow " seoul256
+"colorscheme toychest " vimbrant Tomorrow lucius
+colorscheme distinguished " vimbrant Tomorrow lucius
 
 set autoread
 set history=200
@@ -196,13 +207,22 @@ endif
 
 set hlsearch
 set incsearch
+"set foldmethod=indent
 filetype plugin indent on
 
-hi! link FoldColumn Normal 
-set foldcolumn=12
-set nonumber
+hi! link FoldColumn Normal
+" set foldcolumn=4
+" set nonumber
 
 if has("gui_macvim")
   set guifont=Sauce\ Code\ Powerline\ Light:h14
   set linespace=2
 endif
+
+" detect deface files
+autocmd BufNewFile,BufRead *.html.erb.deface   set syntax=eruby
+
+" thayer
+" set background=dark
+highlight ColorColumn ctermbg=7
+highlight ColorColumn guibg=Gray
