@@ -76,14 +76,14 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 
 "Disable arrow keys
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
 
 map <leader>t :!mix test<CR>
 map <leader>l :set list!<CR>
@@ -144,7 +144,7 @@ let g:used_javascript_libs = 'jquery,angularjs,angularui'
 let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
 "colorscheme toychest " vimbrant Tomorrow lucius
-colorscheme distinguished " vimbrant Tomorrow lucius
+colorscheme toychest  " distinguished vimbrant Tomorrow lucius
 
 set autoread
 set history=200
