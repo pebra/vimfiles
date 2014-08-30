@@ -1,12 +1,11 @@
-set nocompatible
 set encoding=utf-8
+set nocompatible
 
 syntax on
 filetype off
 
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-
+call vundle#begin()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails.git'
@@ -22,6 +21,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-surround.git'
@@ -31,18 +31,21 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'pangloss/vim-javascript'
-Bundle "othree/javascript-libraries-syntax.vim"
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'AndrewRadev/splitjoin.vim'
-"Bundle 'nono/vim-handlebars'
-" Bundle 'hsitz/VimOrganizer'
-"Bundle 'mivok/vimtodo'
-"Bundle 'Valloric/YouCompleteMe'
+" rainbow parentheses
+Bundle 'luochen1990/rainbow'
 
+" UltiSnips
+Bundle 'sirver/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'mustache/vim-mode'
+
+"distraction free mode
+Bundle 'junegunn/goyo.vim'
 
 "Stefans awesome toolchain
 Bundle 'slim-template/vim-slim'
@@ -50,8 +53,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
-Bundle "othree/javascript-libraries-syntax.vim"
-
+" Bundle "othree/javascript-libraries-syntax.vim"
 
 Bundle 'cocopon/iceberg.vim'
 Bundle 'cocopon/svss.vim'
@@ -66,24 +68,22 @@ Bundle 'salinasv/vim-vhdl'
 Bundle "embear/vim-localvimrc"
 
 "don't get scroogled
-" Bundle 'hsanson/vim-android'
-" Bundle 'bpowell/vim-android'
-
+call vundle#end()
 filetype plugin indent on
 
 if has('syntax') && !exists('g:syntax_on')
-  syntax enable			" Turn on syntax highlighting
+  syntax enable " Turn on syntax highlighting
 endif
 
 "Disable arrow keys
-"inoremap  <Up>     <NOP>
-"inoremap  <Down>   <NOP>
-"inoremap  <Left>   <NOP>
-"inoremap  <Right>  <NOP>
-"noremap   <Up>     <NOP>
-"noremap   <Down>   <NOP>
-"noremap   <Left>   <NOP>
-"noremap   <Right>  <NOP>
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
 map <leader>t :!mix test<CR>
 map <leader>l :set list!<CR>
@@ -134,6 +134,9 @@ set background=dark
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
+" enable rainbooowww
+let g:rainbow_active = 1
+
 "disable syntax checking for html
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
@@ -144,7 +147,7 @@ let g:used_javascript_libs = 'jquery,angularjs,angularui'
 let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
 "colorscheme toychest " vimbrant Tomorrow lucius
-colorscheme toychest  " distinguished vimbrant Tomorrow lucius
+colorscheme zenburn  " distinguished vimbrant Tomorrow luciussummerfruit256
 
 set autoread
 set history=200
@@ -194,16 +197,9 @@ set statusline+=%02.3c		" cursor line/total lines
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 
-set helpheight=30         " Set window height when opening Vim help windows
+set helpheight=20         " Set window height when opening Vim help windows
 
 set ttyfast
-
-if &term =~ '256color'
-  " Disable Background Color Erase (BCE) so that color schemes
-  " work properly when Vim is used inside tmux and GNU screen.
-  " See also http://snk.tuxfamily.org/log/vim-256color-bce.html
-  set t_ut=
-endif
 
 set hlsearch
 set incsearch
@@ -216,6 +212,9 @@ hi! link FoldColumn Normal
 
 if has("gui_macvim")
   set guifont=Sauce\ Code\ Powerline\ Light:h14
+  highlight ColorColumn guibg=Gray
+  colorscheme summerfruit256
+  set background=light
   set linespace=2
 endif
 
@@ -225,4 +224,13 @@ autocmd BufNewFile,BufRead *.html.erb.deface   set syntax=eruby
 " thayer
 " set background=dark
 highlight ColorColumn ctermbg=7
-highlight ColorColumn guibg=Gray
+hi Visual term=reverse cterm=reverse guibg=Grey
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+ " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
