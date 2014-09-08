@@ -61,9 +61,6 @@ Bundle 'jonathanfilip/vim-lucius'
 Bundle 'ciaranm/inkpot'
 Bundle 'vim-scripts/summerfruit256.vim'
 
-" vhdl
-Bundle 'salinasv/vim-vhdl'
-
 " load project specific vimrc
 Bundle "embear/vim-localvimrc"
 
@@ -130,7 +127,7 @@ set showbreak=↪\ \
 set scrolloff=3
 
 set t_Co=256
-set background=dark
+" set background=dark
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
@@ -147,7 +144,7 @@ let g:used_javascript_libs = 'jquery,angularjs,angularui'
 let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
 "colorscheme toychest " vimbrant Tomorrow lucius
-colorscheme zenburn  " distinguished vimbrant Tomorrow luciussummerfruit256
+colorscheme toychest " distinguished vimbrant Tomorrow luciussummerfruit256
 
 set autoread
 set history=200
@@ -223,8 +220,8 @@ autocmd BufNewFile,BufRead *.html.erb.deface   set syntax=eruby
 
 " thayer
 " set background=dark
-highlight ColorColumn ctermbg=7
-hi Visual term=reverse cterm=reverse guibg=Grey
+"highlight ColorColumn ctermbg=7
+"hi Visual term=reverse cterm=reverse guibg=Grey
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
@@ -234,3 +231,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
  " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+hi Cursor cterm=NONE guifg=#2b3e50 guibg=#f8f8f2
