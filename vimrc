@@ -43,6 +43,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'mustache/vim-mode'
+Bundle 'StanAngeloff/php.vim'
 
 "distraction free mode
 Bundle 'junegunn/goyo.vim'
@@ -58,8 +59,13 @@ Bundle 'bling/vim-airline'
 Bundle 'cocopon/iceberg.vim'
 Bundle 'cocopon/svss.vim'
 Bundle 'jonathanfilip/vim-lucius'
+Bundle 'daddye/soda.vim'
 Bundle 'ciaranm/inkpot'
 Bundle 'vim-scripts/summerfruit256.vim'
+Bundle 'abra/vim-abra'
+Bundle 'john2x/flatui.vim'
+
+Bundle 'msanders/cocoa.vim'
 
 " load project specific vimrc
 Bundle "embear/vim-localvimrc"
@@ -127,12 +133,11 @@ set showbreak=↪\ \
 set scrolloff=3
 
 set t_Co=256
-" set background=dark
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 
 " enable rainbooowww
-let g:rainbow_active = 1
+let g:rainbow_active = 0
 
 "disable syntax checking for html
 let g:syntastic_mode_map={ 'mode': 'active',
@@ -144,7 +149,8 @@ let g:used_javascript_libs = 'jquery,angularjs,angularui'
 let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
 "colorscheme toychest " vimbrant Tomorrow lucius
-colorscheme toychest " distinguished vimbrant Tomorrow luciussummerfruit256
+set background=light
+colorscheme Tomorrow " distinguished vimbrant Tomorrow luciussummerfruit256
 
 set autoread
 set history=200
@@ -191,7 +197,8 @@ set statusline+=\ %l:
 set statusline+=%02.3c		" cursor line/total lines
 
 " Powerline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
+let g:airline_theme='luna'
 " let g:airline#extensions#tabline#enabled = 1
 
 set helpheight=20         " Set window height when opening Vim help windows
@@ -210,7 +217,7 @@ hi! link FoldColumn Normal
 if has("gui_macvim")
   set guifont=Sauce\ Code\ Powerline\ Light:h14
   highlight ColorColumn guibg=Gray
-  colorscheme summerfruit256
+  colorscheme lucius
   set background=light
   set linespace=2
 endif
@@ -232,4 +239,17 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
  " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-hi Cursor cterm=NONE guifg=#2b3e50 guibg=#f8f8f2
+"hi Cursor cterm=NONE guifg=#2b3e50 guibg=#f8f8f2
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
+"set g:php_syntax_extensions_enabled
+"set b:php_syntax_extensions_enabled
