@@ -17,16 +17,26 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'tpope/vim-surround.git'
 Bundle 'scrooloose/nerdtree'
+
+" colorschemes
 Bundle 'junegunn/seoul256.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'cocopon/iceberg.vim'
+Bundle 'cocopon/svss.vim'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'daddye/soda.vim'
+Bundle 'ciaranm/inkpot'
+Bundle 'vim-scripts/summerfruit256.vim'
+Bundle 'abra/vim-abra'
+Bundle 'john2x/flatui.vim'
+
 Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'tpope/vim-surround.git'
 Bundle 'rking/ag.vim'
-Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-endwise'
@@ -42,7 +52,6 @@ Bundle 'honza/vim-snippets'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
-Bundle 'mustache/vim-mode'
 Bundle 'StanAngeloff/php.vim'
 
 "distraction free mode
@@ -56,19 +65,12 @@ Bundle 'godlygeek/tabular'
 Bundle 'bling/vim-airline'
 " Bundle "othree/javascript-libraries-syntax.vim"
 
-Bundle 'cocopon/iceberg.vim'
-Bundle 'cocopon/svss.vim'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'daddye/soda.vim'
-Bundle 'ciaranm/inkpot'
-Bundle 'vim-scripts/summerfruit256.vim'
-Bundle 'abra/vim-abra'
-Bundle 'john2x/flatui.vim'
+"clojure
+Bundle "guns/vim-clojure-static"
+Bundle "tpope/vim-fireplace"
 
-Bundle 'msanders/cocoa.vim'
+Bundle "juneedahamed/svnj.vim"
 
-" load project specific vimrc
-Bundle "embear/vim-localvimrc"
 
 "don't get scroogled
 call vundle#end()
@@ -79,14 +81,14 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 
 "Disable arrow keys
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
 
 map <leader>t :!mix test<CR>
 map <leader>l :set list!<CR>
@@ -149,8 +151,8 @@ let g:used_javascript_libs = 'jquery,angularjs,angularui'
 let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
 "colorscheme toychest " vimbrant Tomorrow lucius
-set background=light
-colorscheme Tomorrow " distinguished vimbrant Tomorrow luciussummerfruit256
+set background=dark
+colorscheme grb256 " distinguished vimbrant Tomorrow luciussummerfruit256
 
 set autoread
 set history=200
@@ -198,7 +200,7 @@ set statusline+=%02.3c		" cursor line/total lines
 
 " Powerline
 let g:airline_powerline_fonts=1
-let g:airline_theme='luna'
+let g:airline_theme='sol'
 " let g:airline#extensions#tabline#enabled = 1
 
 set helpheight=20         " Set window height when opening Vim help windows
@@ -215,9 +217,9 @@ hi! link FoldColumn Normal
 " set nonumber
 
 if has("gui_macvim")
-  set guifont=Sauce\ Code\ Powerline\ Light:h14
+  set guifont=Sauce\ Code\ Powerline:h14
   highlight ColorColumn guibg=Gray
-  colorscheme lucius
+  colorscheme grb256
   set background=light
   set linespace=2
 endif
@@ -226,9 +228,8 @@ endif
 autocmd BufNewFile,BufRead *.html.erb.deface   set syntax=eruby
 
 " thayer
-" set background=dark
-"highlight ColorColumn ctermbg=7
-"hi Visual term=reverse cterm=reverse guibg=Grey
+" highlight ColorColumn ctermbg=7
+" hi Visual term=reverse cterm=reverse guibg=Grey
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
