@@ -8,18 +8,21 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Bundle 'gmarik/vundle'
+Bundle 'wavded/vim-stylus'
 Bundle 'tpope/vim-rails.git'
 Bundle 'scrooloose/syntastic.git'
 " Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-ruby/vim-ruby.git'
-Bundle 'tpope/vim-rake'
+" Bundle 'tpope/vim-rake'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-git'
+" Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'scrooloose/nerdtree'
+
+Bundle 'jelera/vim-javascript-syntax'
 
 " colorschemes
 Bundle 'junegunn/seoul256.vim'
@@ -34,6 +37,11 @@ Bundle 'ciaranm/inkpot'
 Bundle 'vim-scripts/summerfruit256.vim'
 Bundle 'abra/vim-abra'
 Bundle 'john2x/flatui.vim'
+Bundle 'wellsjo/wells-colorscheme.vim'
+Bundle 'duythinht/inori'
+Bundle 'whatyouhide/vim-gotham'
+Bundle 'romainl/Apprentice'
+Bundle 'wimstefan/Lightning'
 
 Bundle 'ervandew/supertab'
 Bundle 'rking/ag.vim'
@@ -42,20 +50,20 @@ Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'pangloss/vim-javascript'
 Bundle 'elixir-lang/vim-elixir'
-Bundle 'AndrewRadev/splitjoin.vim'
+" Bundle 'AndrewRadev/splitjoin.vim'
 " rainbow parentheses
-Bundle 'luochen1990/rainbow'
+" Bundle 'luochen1990/rainbow'
 
 " UltiSnips
-Bundle 'sirver/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'derekwyatt/vim-scala'
+" Bundle 'sirver/ultisnips'
+" Bundle 'honza/vim-snippets'
+" Bundle 'derekwyatt/vim-scala'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
-Bundle 'StanAngeloff/php.vim'
+" Bundle 'StanAngeloff/php.vim'
 
 "distraction free mode
-Bundle 'junegunn/goyo.vim'
+" Bundle 'junegunn/goyo.vim'
 
 "Stefans awesome toolchain
 Bundle 'slim-template/vim-slim'
@@ -66,10 +74,10 @@ Bundle 'bling/vim-airline'
 " Bundle "othree/javascript-libraries-syntax.vim"
 
 "clojure
-Bundle "guns/vim-clojure-static"
-Bundle "tpope/vim-fireplace"
+" Bundle "guns/vim-clojure-static"
+" Bundle "tpope/vim-fireplace"
 
-Bundle "juneedahamed/svnj.vim"
+" Bundle "juneedahamed/svnj.vim"
 
 
 "don't get scroogled
@@ -152,7 +160,7 @@ let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
 "colorscheme toychest " vimbrant Tomorrow lucius
 set background=dark
-colorscheme grb256 " distinguished vimbrant Tomorrow luciussummerfruit256
+colorscheme Tomorrow-Night " apprentice distinguished vimbrant Tomorrow luciussummerfruit256
 
 set autoread
 set history=200
@@ -200,7 +208,7 @@ set statusline+=%02.3c		" cursor line/total lines
 
 " Powerline
 let g:airline_powerline_fonts=1
-let g:airline_theme='sol'
+let g:airline_theme='luna'
 " let g:airline#extensions#tabline#enabled = 1
 
 set helpheight=20         " Set window height when opening Vim help windows
