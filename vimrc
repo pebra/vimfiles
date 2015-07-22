@@ -10,7 +10,8 @@ call vundle#begin()
 Bundle 'gmarik/vundle'
 Bundle 'wavded/vim-stylus'
 Bundle 'tpope/vim-rails.git'
-Bundle 'scrooloose/syntastic.git'
+Bundle 'isRuslan/vim-es6'
+" Bundle 'scrooloose/syntastic.git'
 " Bundle 'tsaleh/vim-matchit'
 Bundle 'vim-ruby/vim-ruby.git'
 " Bundle 'tpope/vim-rake'
@@ -21,10 +22,14 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'scrooloose/nerdtree'
+Bundle 'Shutnik/jshint2.vim'
+Bundle 'etnadji/vim-epub'
 
-Bundle 'jelera/vim-javascript-syntax'
+" Bundle 'jelera/vim-javascript-syntax'
 
 " colorschemes
+Bundle 'cdmedia/itg_flat_vim'
+Bundle 'NLKNguyen/papercolor-theme'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
@@ -42,13 +47,18 @@ Bundle 'duythinht/inori'
 Bundle 'whatyouhide/vim-gotham'
 Bundle 'romainl/Apprentice'
 Bundle 'wimstefan/Lightning'
+Bundle 'yosiat/oceanic-next-vim'
+Bundle 'scheakur/vim-scheakur'
+Bundle 'nice/sweater'
+Bundle 'therubymug/vim-pyte'
+Bundle 'vim-scripts/sonoma.vim'
 
 Bundle 'ervandew/supertab'
 Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'tpope/vim-endwise'
-Bundle 'pangloss/vim-javascript'
+" Bundle 'pangloss/vim-javascript'
 Bundle 'elixir-lang/vim-elixir'
 " Bundle 'AndrewRadev/splitjoin.vim'
 " rainbow parentheses
@@ -99,6 +109,7 @@ endif
 "noremap   <Right>  <NOP>
 
 map <leader>t :!mix test<CR>
+map <leader>r :!ruby %<CR>
 map <leader>l :set list!<CR>
 set list
 set lcs=tab:▸\ ,nbsp:·,trail:·
@@ -152,15 +163,15 @@ let g:rainbow_active = 0
 "disable syntax checking for html
 let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'active_filetypes': [],
-                     \ 'passive_filetypes': ['html'] }
+                     \ 'passive_filetypes': ['html', 'js'] }
 
 let g:mustache_abbreviations = 1
-let g:used_javascript_libs = 'jquery,angularjs,angularui'
-let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
+" let g:used_javascript_libs = 'jquery,angularjs,angularui'
+" let g:android_sdk_path = '/Users/peter/Development/Android/adt-bundle-mac/sdk'
 
 "colorscheme toychest " vimbrant Tomorrow lucius
 set background=dark
-colorscheme Tomorrow-Night " apprentice distinguished vimbrant Tomorrow luciussummerfruit256
+colorscheme pyte "PaperColor apprentice distinguished vimbrant Tomorrow luciussummerfruit256
 
 set autoread
 set history=200
@@ -208,7 +219,8 @@ set statusline+=%02.3c		" cursor line/total lines
 
 " Powerline
 let g:airline_powerline_fonts=1
-let g:airline_theme='luna'
+" let g:airline_theme='luna'
+let g:airline_theme='papercolor'
 " let g:airline#extensions#tabline#enabled = 1
 
 set helpheight=20         " Set window height when opening Vim help windows
@@ -227,8 +239,8 @@ hi! link FoldColumn Normal
 if has("gui_macvim")
   set guifont=Sauce\ Code\ Powerline:h14
   highlight ColorColumn guibg=Gray
-  colorscheme grb256
-  set background=light
+  colorscheme pyte
+  set background=dark
   set linespace=2
 endif
 
@@ -262,3 +274,21 @@ augroup END
 
 "set g:php_syntax_extensions_enabled
 "set b:php_syntax_extensions_enabled
+"
+set colorcolumn=120
+
+" JSHINT
+let jshint2_save = 1
+let jshint2_confirm = 0
+
+" Hex and Binary Shit
+augroup Binary
+au!
+au BufReadPre *.bin let &bin=1
+au BufReadPost *.bin if &bin | %!xxd
+au BufReadPost *.bin set ft=xxd | endif
+au BufWritePre *.bin if &bin | %!xxd -r
+au BufWritePre *.bin endif
+au BufWritePost *.bin if &bin | %!xxd
+au BufWritePost *.bin set nomod | endif
+augroup END
