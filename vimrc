@@ -29,7 +29,7 @@ Bundle 'etnadji/vim-epub'
 
 " colorschemes
 Bundle 'cdmedia/itg_flat_vim'
-Bundle 'NLKNguyen/papercolor-theme'
+Bundle 'vim-airline/vim-airline-themes'
 Bundle 'junegunn/seoul256.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'tomasr/molokai'
@@ -40,7 +40,6 @@ Bundle 'jonathanfilip/vim-lucius'
 Bundle 'daddye/soda.vim'
 Bundle 'ciaranm/inkpot'
 Bundle 'vim-scripts/summerfruit256.vim'
-Bundle 'abra/vim-abra'
 Bundle 'john2x/flatui.vim'
 Bundle 'wellsjo/wells-colorscheme.vim'
 Bundle 'duythinht/inori'
@@ -171,7 +170,7 @@ let g:mustache_abbreviations = 1
 
 "colorscheme toychest " vimbrant Tomorrow lucius
 set background=dark
-colorscheme pyte "PaperColor apprentice distinguished vimbrant Tomorrow luciussummerfruit256
+colorscheme wellsokai "PaperColor apprentice distinguished vimbrant Tomorrow luciussummerfruit256
 
 set autoread
 set history=200
